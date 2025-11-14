@@ -1,0 +1,44 @@
+---
+title: "R Mod12"
+author: "Omar Hamad"
+date: "2025-11-12"
+output: html_document
+---
+## Introduction
+
+R Markdown is a tool that integrates R code with narrative text to create reproducible documents. This format streamlines the workflow by keeping analysis and documentation in a single file, making it easier to update and share work.
+
+## Math with LaTeX
+
+R Markdown supports LaTeX for mathematical notation. Inline equations like $\alpha + \beta = \gamma$ can be embedded within text, while display equations stand alone:
+
+$$
+E = mc^2
+$$
+
+## Data Analysis
+
+Here's a basic analysis using the mtcars dataset:
+```{r load-data}
+data(mtcars)
+summary(mtcars)
+```
+
+## Visualization
+
+Creating visualizations is straightforward with ggplot2:
+```{r plot, message=FALSE, warning=FALSE}
+library(ggplot2)
+
+ggplot(mtcars, aes(x = wt, y = mpg)) +
+  geom_point(color = "blue", size = 3) +
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  labs(title = "Car Weight vs. Fuel Efficiency",
+       x = "Weight (1000 lbs)",
+       y = "Miles Per Gallon") +
+  theme_minimal()
+```
+
+## Reflection
+
+R Markdown offers significant advantages over traditional report writing. The integration of code and narrative ensures reproducibility and reduces errors from manual data transfer. While there's an initial learning curve with Markdown syntax, the benefits of having a unified workflow make it worthwhile for data analysis projects.
